@@ -73,7 +73,7 @@ export default function CardsScreen({ navigate }: Props) {
               { label: "Card Type", value: "Visa Debit" },
               { label: "Card Number", value: "•••• •••• •••• 7834" },
               { label: "Expiry Date", value: "09/28" },
-              { label: "Billing Address", value: "265 Leon Road East helena MT" },
+              { label: "Billing Address", value: "482 Brown Farm Seneca" },
               { label: "Daily Limit", value: "$5,000.00" },
               { label: "Monthly Spend", value: "$1,234.56" },
             ].map(({ label, value }) => (
