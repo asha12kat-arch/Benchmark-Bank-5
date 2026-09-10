@@ -137,42 +137,47 @@ export default function TransferScreen({ navigate }: Props) {
   ))}
 </div>
           {/* Amount */}
-          <div className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" style={{boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)"}}>
-            <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
-            <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#94a3b8] text-[12px] uppercase tracking-[0.24px]">Amount</p>
-            <div className="bg-[rgba(255,255,255,0.04)] content-stretch flex h-[56px] items-center gap-[8px] px-[16px] relative rounded-[14px] shrink-0 w-full">
-              <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[14px]" />
-              <p className="font-['Young_Serif:Regular',sans-serif] text-[22px] text-[#8b1a2b]">$</p>
-              <input
-                type="number"
-                min="0"
-                max={AVAILABLE_BALANCE}
-                step="0.01"
-                placeholder="0.00"
-                value={amount}
-                onChange={e => setAmount(e.target.value)}
-                className="flex-1 bg-transparent border-0 outline-none font-['Young_Serif:Regular',sans-serif] text-[22px] text-white placeholder:text-[rgba(255,255,255,0.2)]"
-              />
-            </div>
-            {exceedsAvailableBalance && (
-              <p role="alert" className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">
-                Insufficient funds. Enter an amount no greater than $16,000,000.00.
-              </p>
-            )}
-            {/* Memo */}
-            <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#94a3b8] text-[12px] uppercase tracking-[0.24px]">Memo (optional)</p>
-            <div className="bg-[rgba(255,255,255,0.04)] content-stretch flex h-[44px] items-center px-[16px] relative rounded-[14px] shrink-0 w-full">
-              <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[14px]" />
-              <input
-                type="text"
-                placeholder="What is this for?"
-                value={memo}
-                onChange={e => setMemo(e.target.value)}
-                className="flex-1 bg-transparent border-0 outline-none font-['Geist:Regular',sans-serif] text-[14px] text-white placeholder:text-[#94a3b8]"
-              />
-            </div>
-          </div>
+<div className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" style={{boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)"}}>
+  <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
+  <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#94a3b8] text-[12px] uppercase tracking-[0.24px]">Amount</p>
 
+  <div className="bg-[rgba(255,255,255,0.04)] content-stretch flex h-[56px] items-center gap-[8px] px-[16px] relative rounded-[14px] shrink-0 w-full">
+    <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[14px]" />
+    <p className="font-['Young_Serif:Regular',sans-serif] text-[22px] text-[#8b1a2b]">$</p>
+
+    <input
+      type="number"
+      min="0"
+      max={AVAILABLE_BALANCE}
+      step="0.01"
+      placeholder="0.00"
+      value={amount}
+      onChange={e => setAmount(e.target.value)}
+      className="flex-1 bg-transparent border-0 outline-none font-['Young_Serif:Regular',sans-serif] text-[22px] text-white placeholder:text-[rgba(255,255,255,0.2)]"
+    />
+  </div>
+
+  {exceedsAvailableBalance && (
+    <p role="alert" className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">
+      Insufficient funds. Enter an amount no greater than $16,000,000.00.
+    </p>
+  )}
+
+  {/* Memo */}
+  <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#94a3b8] text-[12px] uppercase tracking-[0.24px]">Memo (optional)</p>
+
+  <div className="bg-[rgba(255,255,255,0.04)] content-stretch flex h-[44px] items-center px-[16px] relative rounded-[14px] shrink-0 w-full">
+    <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[14px]" />
+
+    <input
+      type="text"
+      placeholder="What is this for?"
+      value={memo}
+      onChange={e => setMemo(e.target.value)}
+      className="flex-1 bg-transparent border-0 outline-none font-['Geist:Regular',sans-serif] text-[14px] text-white placeholder:text-[#94a3b8]"
+    />
+  </div>
+</div>
           {/* Transfer Now Button */}
           <button
             onClick={handleContinue}
