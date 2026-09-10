@@ -69,31 +69,31 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
           </div>
 
           {/* Transfer Details */}
-          <div className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" style={{boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)"}}>
-            <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
-            <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[15px] text-white">Transfer Details</p>
-            <div className="h-px relative shrink-0 w-full bg-[rgba(255,255,255,0.12)]" />
+<div className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" style={{boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)"}}>
+  <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
+  <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[15px] text-white">Transfer Details</p>
+  <div className="h-px relative shrink-0 w-full bg-[rgba(255,255,255,0.12)]" />
 
-            {[
-              { label: "From", value: "Checking (•••4501)" },
-              { label: "To", value: `${recipient.name} (${recipient.account})` },
-              { label: "Amount", value: `$${total}` },
-              { label: "Fee", value: `$${fee}` },
-              { label: "Memo", value: memo || "—" },
-            ].map(({ label, value }) => (
-              <div key={label} className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-                <p className="font-['Geist:Regular',sans-serif] font-normal leading-[normal] relative shrink-0 text-[#94a3b8] text-[13px]">{label}</p>
-                <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[13px] text-white">{value}</p>
-              </div>
-            ))}
+  {[
+    { label: "From", value: "Checking (•••4501)" },
+    { label: "To", value: `${recipient.name} (${recipient.account})` },
+    { label: "Bank", value: recipient.bank },
+    { label: "Amount", value: `$${total}` },
+    { label: "Fee", value: `$${fee}` },
+    { label: "Memo", value: memo || "—" },
+  ].map(({ label, value }) => (
+    <div key={label} className="content-stretch flex items-center justify-between relative shrink-0 w-full">
+      <p className="font-['Geist:Regular',sans-serif] font-normal leading-[normal] relative shrink-0 text-[#94a3b8] text-[13px]">{label}</p>
+      <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[13px] text-white">{value}</p>
+    </div>
+  ))}
 
-            <div className="h-px relative shrink-0 w-full bg-[rgba(255,255,255,0.12)]" />
-            <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-              <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-white text-[14px]">Total Deducted</p>
-              <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[18px] text-[#8b1a2b]">${total}</p>
-            </div>
-          </div>
-
+  <div className="h-px relative shrink-0 w-full bg-[rgba(255,255,255,0.12)]" />
+  <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
+    <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-white text-[14px]">Total Deducted</p>
+    <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[18px] text-[#8b1a2b]">${total}</p>
+  </div>
+</div>
           {!hasSufficientFunds && (
   <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{border: "1px solid rgba(248,113,113,0.3)"}}>
     <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">Insufficient funds. This transfer exceeds the $1,000,000.00 transfer limit and cannot be completed.</p>
