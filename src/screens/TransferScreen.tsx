@@ -105,36 +105,37 @@ export default function TransferScreen({ navigate }: Props) {
             </div>
 
             {/* Recipient list */}
-            <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-              {RECIPIENTS.filter(r => r.name.toLowerCase().includes(recipient.toLowerCase())).map(r => (
-                <button
-                  key={r.id}
-                  onClick={() => setSelectedRecipient(r.id === selectedRecipient?.id ? null : r)}
-                  className="content-stretch flex items-center gap-[12px] p-[12px] relative rounded-[14px] shrink-0 w-full border-0 cursor-pointer text-left transition-all"
-                  style={{
-                    background: selectedRecipient?.id === r.id ? "rgba(139,26,43,0.08)" : "rgba(255,255,255,0.02)",
-                    boxShadow: selectedRecipient?.id === r.id ? "inset 0 0 0 1px rgba(139,26,43,0.3)" : "inset 0 0 0 1px rgba(255,255,255,0.06)"
-                  }}
-                >
-                  <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative rounded-[14px] shrink-0 size-[40px]" style={{boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)"}}>
-                    <span className="font-['Geist:SemiBold',sans-serif] text-[13px] text-white">{r.initials}</span>
-                  </div>
-                  <div className="content-stretch flex flex-col gap-[2px] items-start relative flex-1 min-w-0">
-                    <p className="font-['Geist:SemiBold',sans-serif] font-semibold relative shrink-0 text-[14px] text-white">{r.name}</p>
-                    <p className="font-['Geist:Regular',sans-serif] font-normal relative shrink-0 text-[#94a3b8] text-[12px]">{r.account}</p>
-                  </div>
-                  {selectedRecipient?.id === r.id && (
-                    <div className="bg-[#8b1a2b] flex items-center justify-center relative rounded-full shrink-0 size-[20px]">
-                      <svg fill="none" height="12" viewBox="0 0 12 12" width="12">
-                        <path d="M2 6L5 9L10 3" stroke="white" strokeLinecap="round" strokeWidth="2" />
-                      </svg>
-                    </div>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
+<div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
+  {RECIPIENTS.filter(r => r.name.toLowerCase().includes(recipient.toLowerCase())).map(r => (
+    <button
+      key={r.id}
+      onClick={() => setSelectedRecipient(r.id === selectedRecipient?.id ? null : r)}
+      className="content-stretch flex items-center gap-[12px] p-[12px] relative rounded-[14px] shrink-0 w-full border-0 cursor-pointer text-left transition-all"
+      style={{
+        background: selectedRecipient?.id === r.id ? "rgba(139,26,43,0.08)" : "rgba(255,255,255,0.02)",
+        boxShadow: selectedRecipient?.id === r.id ? "inset 0 0 0 1px rgba(139,26,43,0.3)" : "inset 0 0 0 1px rgba(255,255,255,0.06)"
+      }}
+    >
+      <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative rounded-[14px] shrink-0 size-[40px]" style={{boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)"}}>
+        <span className="font-['Geist:SemiBold',sans-serif] text-[13px] text-white">{r.initials}</span>
+      </div>
 
+      <div className="content-stretch flex flex-col gap-[2px] items-start relative flex-1 min-w-0">
+        <p className="font-['Geist:SemiBold',sans-serif] font-semibold relative shrink-0 text-[14px] text-white">{r.name}</p>
+        <p className="font-['Geist:Regular',sans-serif] font-normal relative shrink-0 text-[#94a3b8] text-[12px]">{r.account}</p>
+        <p className="font-['Geist:Regular',sans-serif] font-normal relative shrink-0 text-[#94a3b8] text-[12px]">{r.bank}</p>
+      </div>
+
+      {selectedRecipient?.id === r.id && (
+        <div className="bg-[#8b1a2b] flex items-center justify-center relative rounded-full shrink-0 size-[20px]">
+          <svg fill="none" height="12" viewBox="0 0 12 12" width="12">
+            <path d="M2 6L5 9L10 3" stroke="white" strokeLinecap="round" strokeWidth="2" />
+          </svg>
+        </div>
+      )}
+    </button>
+  ))}
+</div>
           {/* Amount */}
           <div className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" style={{boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)"}}>
             <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
