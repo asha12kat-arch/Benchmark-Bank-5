@@ -37,7 +37,7 @@ export default function LoginScreen({ navigate }: Props) {
   const [error, setError] = useState("");
 
   const USERNAME = "leelandlee";
-const PASSWORD = "Tilson21@";
+const PASSWORD = "Tilson11@";
   
   return (
     <div className="bg-gradient-to-b content-stretch flex flex-col from-[#07111f] items-start overflow-hidden relative size-full to-[#0a1628]">
