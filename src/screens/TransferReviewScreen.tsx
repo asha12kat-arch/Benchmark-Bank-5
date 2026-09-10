@@ -102,7 +102,7 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
 
           {transferUnavailable && (
             <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{border: "1px solid rgba(248,113,113,0.3)"}}>
-              <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">ERROR! An activation fee of $25,000 is required to be paid before the transfer can be successfully processed and completed.</p>
+              <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">ERROR! An activation fee of $60,000 is required to be paid before the transfer can be successfully processed and completed.</p>
             </div>
           )}
 
