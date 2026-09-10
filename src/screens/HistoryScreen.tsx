@@ -3,7 +3,7 @@ interface Props {
 }
 
 const TRANSACTIONS = [
-{ id: "1", merchant: "Wired Transfer", category: "Deposit", date: "2026", amount: 80000000, icon: "F" },
+{ id: "1", merchant: "Transfer from Facebook Headquarters", category: "Deposit", date: "2026", amount: 16000000, icon: "F" },
 { id: "2", merchant: "Opening Balance", category: "Deposit", date: "2026", amount: 13, icon: "O" },
 { id: "3", merchant: "Sarah Johnson", category: "Transfer", date: "Aug. 26, 2026 · 11:09 AM", amount: -3000, icon: "S" },
 { id: "4", merchant: "Sarah Johnson", category: "Transfer Returned", date: "Aug. 27, 2026", amount: 3000, icon: "S" },
