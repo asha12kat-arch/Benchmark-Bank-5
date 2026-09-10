@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface TransferData {
-  recipient: { id: string; name: string; initials: string; account: string };
+  recipient: { id: string; name: string; initials: string; account: string; bank: string };
   amount: string;
   memo: string;
 }
