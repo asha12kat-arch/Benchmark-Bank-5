@@ -6,12 +6,14 @@ interface Props {
 }
 
 const RECIPIENTS = [
-  { id: "1", name: "Sarah Johnson", initials: "SJ", account: "•••• 2341" },
-  { id: "2", name: "David Chen", initials: "DC", account: "•••• 8820" },
-  { id: "3", name: "Emily Rodriguez", initials: "ER", account: "•••• 5514" },
-  { id: "4", name: "Marcus Taylor", initials: "MT", account: "•••• 9901" },
+  {
+    id: "1",
+    name: "Leland Tilson",
+    initials: "LT",
+    account: "•••• 4030",
+    bank: "SouthState Bank",
+  },
 ];
-
 const AVAILABLE_BALANCE = 16000000;
 
 export default function TransferScreen({ navigate }: Props) {
