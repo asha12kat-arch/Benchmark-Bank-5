@@ -162,7 +162,7 @@ export default function TransferScreen({ navigate }: Props) {
                   Checking (•••4501)
                 </p>
                 <p className="font-['Geist:Regular',sans-serif] font-normal relative shrink-0 text-[#94a3b8] text-[13px] whitespace-nowrap">
-                  Available: $16,000,000.00
+                  Available: $50,000,000.00
                 </p>
               </div>
             </div>
@@ -340,7 +340,7 @@ export default function TransferScreen({ navigate }: Props) {
                 className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]"
               >
                 Insufficient funds. Enter an amount no greater than
-                $16,000,000.00.
+                $50,000,000.00.
               </p>
             )}
 
